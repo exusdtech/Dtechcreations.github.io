@@ -1,0 +1,1143 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #1A1A1D;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #ffc107;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    font-size: 20px;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 3rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff6600;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6600;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+section#home {
+    background-color: #1A1A1D;
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem;
+    background-color: #1A1A1D;
+}
+
+#dynamicHeadline {
+    margin: 0;
+    color: #ffffff;
+    font-size: 45px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+        /* Increased spacing on mobile */
+    }
+
+    #home {
+        padding: 1rem;
+    }
+
+    #dynamicHeadline {
+        font-size: 1.2rem;
+    }
+}
+
+#ona video {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* Centers the video horizontally */
+    max-width: 100%;
+    /* Ensure the video doesn't exceed its container's width */
+}
+
+/* Additional styles for responsiveness */
+@media only screen and (max-width: 767px) {
+    #ona video {
+        max-width: 100%;
+        /* Ensure the video doesn't exceed its container's width on mobile */
+    }
+}
+
+
+/* Desktop styles */
+#about {
+
+    padding: 60px 0;
+    /* Adjust the padding according to your design */
+}
+
+.about-content {
+    color: #ffffff;
+    max-width: 800px;
+    /* Set a maximum width for better readability on larger screens */
+    margin: 0 auto;
+}
+
+.my-heading {
+    color: #ffc107;
+    font-size: 2.5em;
+}
+
+.my-paragraph {
+    font-size: 1.2em;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 767px) {
+    #about {
+        padding: 40px 0;
+        /* Adjust the padding for smaller screens */
+    }
+
+    .my-heading {
+        font-size: 2em;
+        /* Adjust the font size for smaller screens */
+    }
+
+    .my-paragraph {
+        font-size: 1.2em;
+        /* Adjust the font size for smaller screens */
+    }
+}
+
+#services {
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#services:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(255, 0, 204, 0) 70%);
+    animation: glowing 3s linear infinite;
+}
+
+#services h2 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    color: #ffc107;
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.service {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ff6600;
+    box-shadow: 0 0 20px rgba(166, 255, 0, 0.1);
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 1s linear, opacity 0.5s ease-in-out;
+    border: 5px solid transparent;
+    overflow: hidden;
+}
+
+/* Adjust styles for smaller screens */
+@media only screen and (max-width: 767px) {
+    #services {
+        padding: 60px 0;
+    }
+
+    #services h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 80%;
+        height: auto;
+        margin: 20px 0;
+    }
+}
+
+.scroll-line-container {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100vh;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.service:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.service video {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.service:hover video {
+    transform: scale(1.1);
+}
+
+.service .text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    /* Initially set to 0 */
+    transition: opacity 0.5s ease-in-out;
+    /* Include opacity in the transition */
+}
+
+.service:hover .text-container {
+    opacity: 1;
+    /* Set to 1 on hover */
+}
+
+.service h3 {
+    font-size: 24px;
+    color: #2C1E4A;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.service:hover {
+    border-color: #ffc107;
+}
+
+/* Style for fade-in animation */
+.fade-in {
+    opacity: 1;
+}
+
+/* Animation effect when scrolling */
+@keyframes glowing {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Fade out on scroll effect */
+.service:not(:hover) {
+    opacity: 1;
+}
+
+/* Style for scroll line */
+.scroll-line {
+    position: absolute;
+    background-color: #fff;
+    width: 2px;
+    z-index: 1000;
+}
+
+/* Additional style for service details on hover */
+.service-hover-details {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 10000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade in effect for service details */
+.service-hover-details.fade-in {
+    opacity: 1;
+}
+
+#serve {
+    position: relative;
+    background-color: #f2f2f2;
+    padding: 50px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+#serve::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.serve-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.serve {
+    position: relative;
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #ffffff;
+    text-align: left;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.serve i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #3498db;
+}
+
+.serve h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffc400;
+}
+
+.serve p {
+    font-size: 1em;
+    color: #ffffff;
+}
+
+.serve:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+}
+
+.serve:hover i {
+    transform: rotate(360deg);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+    .serve {
+        width: calc(50% - 20px);
+    }
+}
+
+#potential-clients {
+    text-align: center;
+    padding: 60px 0;
+    /* Adjust the padding according to your design */
+}
+
+#potential-clients h2 {
+    color: #ffc400;
+    margin-bottom: 20px;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+#potential-clients .my-paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #9c9696;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 767px) {
+    #potential-clients {
+        padding: 40px 0;
+        /* Adjust the padding for smaller screens */
+    }
+
+    #potential-clients h2 {
+        font-size: 28px;
+        /* Adjust the font size for smaller screens */
+    }
+
+    #potential-clients .my-paragraph {
+        font-size: 14px;
+        /* Adjust the font size for smaller screens */
+    }
+}
+
+#statistics {
+    color: #ffc400;
+    padding: 60px 0;
+    font-size: 38px;
+    /* Increase the font size for better readability on smaller screens */
+    text-align: center;
+}
+
+.statistics-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.statistic p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    margin: 25px;
+}
+
+.statistics h3 {
+    font-size: 120px;
+    /* Increase the font size for larger screens */
+    color: #ffc400;
+    margin-bottom: 10px;
+    animation: count-up 2s ease-out;
+}
+
+/* Adjust styles for smaller screens */
+@media only screen and (max-width: 767px) {
+    .statistics {
+        font-size: 18px;
+        /* Adjust the font size for smaller screens */
+    }
+
+    .statistics h3 {
+        font-size: 48px;
+        /* Adjust the font size for smaller screens */
+    }
+}
+
+#projectsCount,
+#clientsCount {
+    font-size: 56px;
+    font-weight: bold;
+    color: #ffc400;
+    margin: 10px;
+}
+
+#happyClients {
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+#happyClients h2 {
+    color: #fafa16f3;
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.client-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    /* Adjusted margin for smaller screens */
+}
+
+@media only screen and (max-width: 767px) {
+    .client-container {
+        margin-top: 60px;
+        /* Adjusted margin for smaller screens */
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.client-box {
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(255, 23, 23, 0.335);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    opacity: 0;
+    position: relative;
+}
+
+.client-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgb(255, 255, 255);
+}
+
+.client-logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 5px;
+    /* Adjust the bottom margin to reduce space */
+}
+
+.client-link {
+    text-decoration: none;
+    color: #ff6600;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#team {
+    font-size: 30px;
+    color: #ffc400;
+    text-align: center;
+    opacity: 0;
+    /* Initially set to 0 */
+    transition: opacity 1s ease-in-out;
+    /* Include opacity in the transition */
+}
+
+#team.visible {
+    opacity: 1;
+    /* Set to 1 when the section is visible */
+}
+
+#team h2 {
+    margin-top: 0px;
+}
+
+#team .my-paragraph {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #9c9696;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Adjust styles for smaller screens */
+@media only screen and (max-width: 767px) {
+    #team {
+        font-size: 24px;
+    }
+
+    #team h2 {
+        font-size: 28px;
+    }
+
+    #team .my-paragraph {
+        font-size: 16px;
+        max-width: 100%;
+        margin: 0 10px;
+    }
+}
+
+#tools-section {
+    color: #ffc400;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+#tools-section h2 {
+    font-size: 2em;
+    /* Adjusted font size for responsiveness */
+}
+
+.tool-image {
+    max-width: 100%;
+    height: auto;
+    /* Ensures images maintain their aspect ratio */
+}
+
+#tools-section .my-paragraph {
+    font-size: 16px;
+    /* Adjusted font size for responsiveness */
+    line-height: 1.6;
+    color: #f8f8f8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Mobile responsiveness adjustments */
+@media only screen and (max-width: 767px) {
+    #tools-section {
+        padding: 10px;
+        /* Adjusted padding for smaller screens */
+    }
+
+    #tools-section h2 {
+        font-size: 1.5em;
+        /* Further adjusted font size for smaller screens */
+    }
+
+    #tools-section .my-paragraph {
+        font-size: 14px;
+        /* Further adjusted font size for smaller screens */
+    }
+}
+
+
+#popa h2 {
+    color: #ffc400;
+    text-align: center;
+    font-size: 50px;
+    padding: 20px;
+    font-family: 'Roboto, Arial, sans-serif';
+}
+
+.post-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.poster img {
+    max-width: 100%;
+    height: auto;
+}
+
+.poster h2 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.poster p {
+    color: #666;
+}
+
+#popo h2 {
+    margin-bottom: 1px;
+    color: #ffc400;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+/* Styles for video container on the right */
+.video-container {
+    float: right;
+}
+
+/* Styles for video container-9x16 on the left */
+.video-container-9x16 {
+    float: left;
+}
+
+/* Container for all video containers */
+.video-container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid #1A1A1D;
+    padding: 10px;
+}
+
+/* Adjust styles for smaller screens */
+@media only screen and (max-width: 767px) {
+    .video-container {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .video-container-9x16 {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+    }
+
+    .video-container.playing {
+        background-color: #1A1A1D;
+    }
+}
+
+.video-container {
+    position: relative;
+    width: 45vw;
+    height: 25.31vw;
+    margin: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.video-container.playing {
+    background-color: #1A1A1D;
+}
+
+.video-container-9x16 {
+    width: 22.5vw;
+    height: 40vw;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.video-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1em;
+    margin: 0;
+}
+
+#atam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* Optional: Set a specific height for the section if needed */
+}
+
+.imn {
+    max-width: 100%;
+    /* Ensure the image doesn't exceed its natural size */
+    height: auto;
+    /* Maintain the image's aspect ratio */
+}
+
+/* Adjust styles for smaller screens */
+@media only screen and (max-width: 767px) {
+    #atam {
+        height: auto;
+        /* Allow the section to adjust its height based on content for smaller screens */
+    }
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.social-icon {
+    margin: 0 20px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.gm-icon img {
+    margin: 0 20px;
+    cursor: pointer;
+    text-align: left;
+    margin-left: 40px;
+    width: 50px;
+    /* Adjust the size as needed */
+    height: 50px;
+    /* Adjust the size as needed */
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-out;
+}
+
+.in-icon img {
+    margin: 0 20px;
+    cursor: pointer;
+    text-align: left;
+    width: 50px;
+    /* Adjust the size as needed */
+    height: 50px;
+    /* Adjust the size as needed */
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-out;
+
+}
+
+.link-icon img {
+    margin: 0 20px;
+    cursor: pointer;
+    text-align: left;
+    width: 50px;
+    /* Adjust the size as needed */
+    height: 50px;
+    /* Adjust the size as needed */
+    margin-bottom: 30px;
+    transition: transform 0.5s ease-out;
+}
+
+/* Add hover effect */
+.social-icon:hover,
+.gm-icon img:hover,
+.in-icon img:hover,
+.link-icon img:hover {
+    transform: scale(1.5);
+}
+
+#contact-section {
+    text-align: center;
+    padding: 50px 0;
+    /* Add padding for better spacing on all devices */
+}
+
+.contact-icon {
+    margin: 10px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+#plo h2 {
+    color: #ffc400;
+    text-align: center;
+    font-size: 30px;
+    /* Remove the space between 30 and px */
+    padding: 20px;
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+#copa {
+    position: relative;
+}
+
+#logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#copa p {
+    text-align: center;
+    font-size: 14px;
+    /* Change 3px to 14px for better readability */
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 2s steps(40) infinite;
+    margin-bottom: 8px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media only screen and (max-width: 767px) {
+    #plo h2 {
+        font-size: 24px;
+    }
+
+    #copa p {
+        font-size: 12px;
+        /* Adjust font size for smaller screens */
+    }
+}
+
+/* Common styles for all icons */
+.social-icons {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.social-icon,
+.gm-icon img,
+.in-icon img,
+.link-icon img {
+    margin: 0 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 767px) {
+    .social-icons {
+        flex-direction: column;
+    }
+
+    .social-icon,
+    .gm-icon img,
+    .in-icon img,
+    .link-icon img {
+        margin: 10px 0;
+    }
+}
+
+/* Individual styles for each icon */
+.gm-icon img,
+.in-icon img,
+.link-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    /* Adjust the size and margin as needed */
+    transition: transform 0.3s ease-out;
+}
+
+.link-icon img {
+    transition: transform 0.5s ease-out;
+}
+
+/* Add hover effect */
+.social-icon:hover,
+.gm-icon img:hover,
+.in-icon img:hover,
+.link-icon img:hover {
+    transform: scale(1.5);
+}
+/* Common styles for both desktop and mobile */
+.footer {
+color: #fff;
+text-align: center;
+padding: 20px;
+font-size: 20px;
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+opacity: 0; /* Initially set opacity to 0 */
+transition: opacity 0.3s ease; /* Add transition effect for smooth visibility */
+}
+
+.footer p {
+margin: 0;
+}
+
+.killer-line {
+font-size: 1.2em;
+margin-top: 10px;
+}
+
+.show-footer {
+opacity: 1 !important; /* Override the initial opacity */
+}
+
+.line {
+display: inline-block;
+vertical-align: middle;
+font-size: 16px;
+margin-left: 10px;
+/* Adjust the spacing between logo and line */
+}
+
+.container {
+display: flex;
+justify-content: space-between;
+padding: 20px;
+color: #fff;
+}
+
+.connect-section,
+.additional-text {
+display: flex;
+flex-direction: column;
+
+text-align: center;
+/* Center text in both sections */
+}
+
+.connect-section {
+align-items: center;
+/* Center items in connect section */
+}
+
+.additional-text {
+align-items: center;
+/* Center items in additional text section */
+margin-bottom: 20px;
+}
+
+.cnoct-text {
+font-size: 20px;
+font-family: 'Roboto, Arial, sans-serif';
+color: #ffc107;
+}
+
+.connect-text {
+font-size: 50px;
+font-family: 'Roboto, Arial, sans-serif';
+font-weight: bold;
+}
+
+
+.tion {
+margin-left: 10px;
+text-align: center;
+/* Center text in smaller screens */
+}
+
+/* Styles for desktop screens */
+@media only screen and (min-width: 768px) {
+#ona video {
+width: auto;
+/* Reset video width for larger screens */
+height: 100%;
+margin: 0;
+}
+}
+
+/* Styles for mobile screens */
+@media only screen and (max-width: 767px) {
+#ona video {
+width: 100%;
+height: auto;
+display: block;
+margin: 0 auto;
+/* Centers the video horizontally */
+}
+
+.footer {
+display: block;
+/* Show the footer on smaller screens */
+}
+
+.foter,
+.foteer {
+margin-top: 50px;
+/* Adjust margin for better separation from content */
+}
+
+.foter-nv a,
+.foteer-naav a {
+margin: 20px 150px 10px 0;
+margin: 0;
+/* Remove the right margin for better alignment */
+}
+.additional-text p {
+text-align: left;
+/* Align text to the left in mobile mode */
+}   
+}
+.foter-nv a {
+color: #fff;
+
+}
+.foter-nv a:hover {
+color: #ff6600;
+
+}
+
+.foteer-naav a {
+color: #fff;
+}
+.foteer-naav a:hover {
+color: #ff6600;
+
+}

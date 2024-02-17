@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Technology firm</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="workstyle.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="dtech creations.svg" height="200" width="200" alt="Your Photo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#tam">Contact</a></li>
+            <li><a href="#happyClients">Testimonials</a></li>
+        </ul>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <p id="dynamicHeadline" class="my-sad">We simplify the path to digital excellence for your business</p>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dynamicHeadline = document.getElementById('dynamicHeadline');
+            const dynamicHeadlinesArray = [
+                "We simplify the path to digital excellence for your business",
+                "Crafting success, pixel by pixel",
+                "Elevate your brand's digital presence with us",
+                "Redefining Digital Excellence",
+                " Where Innovation Takes Center Stage",
+                " Elevate, Innovate, Dominate",
+                " Seamless Solutions, Striking Results",
+            ];
+
+            let currentHeadlineIndex = 0;
+
+            function updateHeadline() {
+                dynamicHeadline.textContent = dynamicHeadlinesArray[currentHeadlineIndex];
+                currentHeadlineIndex = (currentHeadlineIndex + 1) % dynamicHeadlinesArray.length;
+            }
+
+            updateHeadline();
+            setInterval(updateHeadline, 2000); // Change the headline every 2 seconds
+        });
+    </script>
+    <section id="ona">
+        <video loop muted autoplay disablepictureinpicture>
+            <source src="teal gradient modern grow your business video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+    </section>
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="my-heading">About</h2>
+                <p class="my-paragraph">DTech Creations is a leading provider of cross-platform solutions, excelling in
+                    Android, iOS, and web development, alongside SEO expertise. Our adept team goes beyond coding,
+                    offering creative solutions like video editing, logo design, and graphics. Focused on innovation, we
+                    craft compelling visual narratives, user-friendly websites, and robust digital marketing strategies.
+                    From SEO to branding, our services elevate online visibility and establish a strong brand identity.
+                    We specialize in social media marketing, strategic initiatives, and top-notch UI/UX services.
+                    Clients trust us not only for technical proficiency but also for an unwavering dedication to
+                    holistic solutions. We guarantee an immersive digital experience that propels your brand to new
+                    heights. Choose DTech Creations for a partnership grounded in professionalism, innovation, and
+                    transformative outcomes – we craft success, pixel by pixel!</p>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container" id="servicesContainer">
+            <!-- Dynamic services will be added here using JavaScript -->
+        </div>
+
+        <script>
+            // Function to dynamically generate service elements with video and details
+            function generateServiceElements() {
+                const servicesContainer = document.getElementById('servicesContainer');
+
+                // Dynamic services data (you can replace this with your actual service data)
+                const servicesData = [
+                    { name: "Web Development", video: "Untitled design (1).mp4", },
+                    { name: "App Development", video: "WhatsApp Video 2024-01-14 at 12.44.23_54f9c99f.mp4", },
+                    { name: "Graphics Design", video: "desu.mp4", },
+                    { name: "Video Editing", video: "VID-20240114-WA0008_2.mp4", },
+                    { name: "Social Media Marketing", video: "Untitled design.mp4", },
+                    { name: "Animation", video: "production_id_5081433 (2160p).mp4", },
+                    { name: "UI/UX", video: "WhatsApp Video 2024-01-14 at 13.27.06_ae0c030e.mp4", },
+                    { name: "Consulting", video: "wrr.mp4", },
+                ];
+
+                servicesData.forEach(service => {
+                    const serviceElement = document.createElement('div');
+                    serviceElement.className = 'service fade-in'; // Added fade-in class
+                    serviceElement.innerHTML = `
+                        <video width="320" height="240" autoplay muted loop>
+                            <source src="${service.video}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="service-details">
+                            <h3 class="service-name">${service.name}</h3>
+                           
+                        </div>
+                    `;
+
+                    servicesContainer.appendChild(serviceElement);
+                });
+            }
+
+            // Call the function to generate service elements
+            generateServiceElements();
+
+            // Add event listener to trigger fade-in effect when scrolling
+            window.addEventListener('scroll', handleScroll);
+
+            // Function to handle scroll events
+            function handleScroll() {
+                const servicesContainer = document.getElementById('servicesContainer');
+                const containerTop = servicesContainer.getBoundingClientRect().top;
+
+                if (containerTop < window.innerHeight - 100) {
+                    servicesContainer.classList.add('fade-in');
+                    showServiceDetails();
+                }
+            }
+
+            // Function to display service details on hover
+            function showServiceDetails() {
+                const services = document.querySelectorAll('.service');
+
+                services.forEach(service => {
+                    service.addEventListener('mouseenter', () => {
+                        const details = service.querySelector('.text-container');
+                        details.style.opacity = 1;
+                    });
+
+                    service.addEventListener('mouseleave', () => {
+                        const details = service.querySelector('.text-container');
+                        details.style.opacity = 0;
+                    });
+                });
+            }
+        </script>
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="serve-container">
+            <div class="serve">
+                <img src="wd.svg" width="100px" height="100px" alt="lf">
+                <h3>Website design and development</h3>
+                <p>Designing responsive and dynamic websites customized to your needs, with a focus on search engine
+                    optimization.</p>
+            </div>
+            <div class="serve">
+                <img src="ad.svg" width="100px" height="100px" alt="lf">
+                <h3>App Development</h3>
+                <p>Creating innovative mobile apps for Android and iOS. Boost your business with cutting-edge
+                    development, blending innovation and user-centric design.
+                </p>
+            </div>
+            <div class="serve">
+                <img src="gd.svg" width="100px" height="100px" alt="lf">
+                <h3>Graphics Design</h3>
+                <p>Creating captivating visuals for your brand and marketing—transforming ideas into stunning graphics.
+                </p>
+            </div>
+            <div class="serve">
+                <img src="bi.svg" width="100px" height="100px" alt="lf">
+                <h3>Brand identity design</h3>
+                <p>We'll help you create a brand identity that is unique, memorable, and reflective of your brand
+                    values..</p>
+            </div>
+            <div class="serve">
+                <img src="smarkr.svg" width="100px" height="100px" alt="lf">
+                <h3>Social media marketing</h3>
+                <p>"We'll craft and execute a targeted social media strategy to meet your business goals."</p>
+            </div>
+            <div class="serve">
+                <img src="vd.svg" width="100px" height="100px" alt="lf">
+                <h3>Video production</h3>
+                <p>We'll produce high-quality video ads and other video content that will help you tell your brand story
+                    and engage your audience..</p>
+            </div>
+
+            <div class="serve">
+                <img src="llog.svg" width="100px" height="100px" alt="lf">
+                <h3>Logo Design</h3>
+                <p>Unleash the impact of visual identity with our custom logo designs. Elevate your brand presence with
+                    distinctive, memorable logos.
+                    .</p>
+            </div>
+
+            <div class="serve">
+                <img src="cw.svg" width="100px" height="100px" alt="lf">
+                <h3>Copy Writer</h3>
+                <p>Unlock your brand's potential with our creative expertise. Elevate your story, captivate your
+                    audience, and define excellence through our unparalleled copywriting services.</p>
+            </div>
+            <div class="serve">
+                <img src="seo.svg" width="100px" height="100px" alt="lf">
+                <h3>SEO specialist</h3>
+                <p>Unlock digital potential with our SEO expertise for elevated online presence and sustainable growth.
+                </p>
+            </div>
+            <div class="serve">
+                <video loop muted autoplay width="100" height="100" disablepictureinpicture>
+                    <source src="2d3d.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h3>2d/3d Animation</h3>
+                <p>Bringing visions to life with expert 2D/3D animations. We use cutting-edge technology for immersive
+                    storytelling in every frame.</p>
+            </div>
+
+            <div class="serve">
+                <img src="infor.svg" width="100px" height="100px" alt="lf">
+                <h3>Infographics</h3>
+                <p>Explore visually stunning infographics with cutting-edge technology. Our services blend creativity
+                    and advanced design to convey your story captivatingly.
+                </p>
+            </div>
+            <div class="serve">
+                <img src="socia mana.svg" width="100px" height="100px" alt="lf">
+                <h3>Social Media management</h3>
+                <p>Transform your digital experience with Quantum Social Media Management. We redefine online brand
+                    presence using AI algorithms and holographic engagement for unparalleled connectivity and
+                    innovation.</p>
+            </div>
+            <div class="serve">
+                <img src="ve.svg" width="100px" height="100px" alt="lf">
+                <h3>Video Editing</h3>
+                <p>Transform your content with our video editing service – a blend of tech magic and artistry for
+                    captivating masterpieces on YouTube, Instagram, and for influencers. Unleash the power of cinematic
+                    wizardry!
+                </p>
+            </div>
+            <div class="serve">
+                <img src="im.svg" width="100px" height="100px" alt="lf">
+                <h3>Influencer Marketing</h3>
+                <p>Catapult your brand to stardom with our influence magic. We turn attention into influence, making
+                    your brand shine in the spotlight. Elevate, engage, conquer.
+                </p>
+            </div>
+            <div class="serve">
+                <img src="ads cam.svg" width="100px" height="100px" alt="lf">
+                <h3>Ads Campaigns</h3>
+                <p>Crafting impactful ad campaigns, we seamlessly integrate strategic prowess, turning ideas into
+                    impressions with the latest tech for a standout digital presence
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Font Awesome library -->
+    <section id="potential-clients">
+        <h2>Global Excellence Delivered</h2>
+        <p class="my-paragraph">Elevating Brands Worldwide through Punctual Precision and Impeccable Revisions" In the
+            ever-evolving landscape of content creation, our commitment to excellence knows no borders. Serving clients
+            from around the globe, we take pride in delivering unparalleled work that not only meets but exceeds
+            expectations. Our track record speaks volumes, as we consistently provide top-notch content before deadlines
+            and offer meticulous revisions to ensure perfection.
+
+            At DTech Creations, we understand the significance of content in enhancing brand value. Our international
+            clientele places their trust in us, confident that our dedicated team will not only meet their expectations
+            but also elevate their brand presence through exceptional content delivery. Join the ranks of our satisfied
+            clients and experience the unparalleled service that sets us apart in the global market.</p>
+        <div class="clients-container" id="clientsContainer">
+            <!-- Dynamic clients will be added here using JavaScript -->
+        </div>
+    </section>
+    <section id="statistics">
+        <div class="statistics-container">
+            <div class="statistic">
+                <h3 id="projectsCount">0</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="statistic">
+                <h3 id="clientsCount">0</h3>
+                <p>Clients Served</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function countUp(element, targetNumber) {
+            let currentNumber = 0;
+            const step = targetNumber / 60; // Adjust the step based on animation duration
+
+            function updateCount() {
+                if (currentNumber < targetNumber) {
+                    currentNumber += step;
+                    element.textContent = currentNumber < 25 || currentNumber < 200
+                        ? Math.round(currentNumber)
+                        : Math.round(currentNumber) + "+";
+                    requestAnimationFrame(updateCount);
+                } else {
+                    element.textContent = targetNumber + "+";
+                }
+            }
+
+            updateCount();
+        }
+
+        function isElementInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+            );
+        }
+
+        const projectsCountElement = document.getElementById('projectsCount');
+        const clientsCountElement = document.getElementById('clientsCount');
+
+        window.addEventListener('scroll', () => {
+            if (isElementInViewport(projectsCountElement)) {
+                countUp(projectsCountElement, 200); // Change 20 to your desired number
+            }
+
+            if (isElementInViewport(clientsCountElement)) {
+                countUp(clientsCountElement, 25); // Change 25 to your desired number
+            }
+        });
+    </script>
+
+
+    <section id="happyClients">
+        <h2>Our Clients</h2>
+        <div class="client-container">
+            <div class="client-box">
+                <img src="image_search_1705136196730.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@DevanshDixit?si=DDPLPTbPsk-PLITf" class="client-link">Devansh Dixit</a>
+            </div>
+            <div class="client-box">
+                <img src="image_search_1705136226475.png" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@SamShiahTalksFinance?si=t5zqu_3CJFpWatQg" class="client-link">Sam
+                    ShiahTalks</a>
+            </div>
+            <div class="client-box">
+                <img src="image_search_1705136238192.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@JJCentral-DIY?si=0-0HlTD58dNe_PIn" class="client-link">JJ Central</a>
+            </div>
+            <div class="client-box">
+                <img src="image_search_1705136249753.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@FyzeeNauman?si=vkZLn_P1YzSv4XqL" class="client-link">Fyzee Nauman</a>
+            </div>
+
+
+            <div class="client-box">
+                <img src="image_search_1705136260213.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/thebundlemedia?igsh=MWxubjNhN2RhZmxpMQ==" class="client-link">The
+                    Bundle
+                    Media</a>
+            </div>
+            <div class="client-box">
+
+                <img src="image_search_1705136275285.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@sigmaearth?si=kbf8IgH0OTOyJTxT" class="client-link">Sigma Earth</a>
+            </div>
+
+
+            <div class="client-box">
+                <img src="IMG-20230918-WA0042.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@KnowNow0904?si=B9oUxniA-YEKCQvZ" class="client-link">Know Now</a>
+            </div>
+            <div class="client-box">
+                <img src="image_search_1705136431451.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@AnuradhaSharda?si=XieEpfwPjUvmyEHS" class="client-link">Anuradha Sharda
+                    Astrology</a>
+            </div>
+            <div class="client-box">
+                <img src="image_search_1705136452264.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@KewalTravel?si=Mefvpf_9uB5HAEVw" class="client-link">Kewal travel</a>
+            </div>
+            <div class="client-box">
+                <img src="image_search_1705136464518.png" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/carxstream_?igsh=bjhkZGtzejN1OTVv" class="client-link">CarXstream</a>
+            </div>
+
+            <div class="client-box">
+                <img src="image_search_1705136480358.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/myrevueapp?igsh=OW1hMTByOXRnN3Fm" class="client-link">MyRevue</a>
+            </div>
+            <div class="client-box">
+
+                <img src="Screenshot_20240113_143147_WhatsApp.png" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/kmbys.co?igsh=Mm9iMmc1YmY5djV1" class="client-link">KMBYS</a>
+            </div>
+
+
+            <div class="client-box">
+                <img src="image_search_1705136531399.png" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/theweekendyogi?igsh=NzJ4OWhwYndzZXZx" class="client-link">The Weekend
+                    Yogi</a>
+            </div>
+            <div class="client-box">
+                <img src="image_search_1705136568181.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/hritiknahar?igsh=MXd1cGVvbTA3NmM4ZQ==" class="client-link">Hritik
+                    Nahar</a>
+            </div>
+
+            <div class="client-box">
+                <img src="IMG-20220806-WA0010.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/invest_with_kartik?igsh=YjdiNHc3ZTB6NHdn" class="client-link">Invest
+                    With Kartik</a>
+            </div>
+            <div class="client-box">
+
+                <img src="image_search_1705136661616.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/roobinamongia?igsh=ZnFtaGVteDUxb3N3" class="client-link">Roobina
+                    Mongia</a>
+            </div>
+
+            <div class="client-box">
+                <img src="image_search_1705136693382.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://www.linkedin.com/company/image-vistar/" class="client-link">Image Vistar</a>
+            </div>
+            <div class="client-box">
+
+                <img src="image_search_1705136708205.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://www.linkedin.com/in/martin-stark-au?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                    class="client-link">Martin Stark</a>
+            </div>
+
+            <div class="client-box">
+                <img src="image_search_1705136793834.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/banjaran_india?igsh=MTY2eGt0Z2Jlc2F5Yg=="
+                    class="client-link">Banjaran
+                    India</a>
+            </div>
+            <div class="client-box">
+                <img src="image_search_1705136811257.png" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/kampashan_?igsh=MXd0aW1zdWh4OXlqcw=="
+                    class="client-link">Kampashan</a>
+            </div>
+
+            <div class="client-box">
+                <img src="image_search_1705136825079.png" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@WildStoneCODE?si=lDJDYvia78bxlO0T" class="client-link">Wild Stone Code</a>
+            </div>
+            <div class="client-box">
+                <img src="image_search_1705140630953.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/woodenstreet?igsh=MWhocmc4aHNsMWNhMw==" class="client-link">Wooden
+                    Street</a>
+            </div>
+            <div class="client-box">
+                <img src="image_search_1705136836314.png" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/kaya`clinics?igsh=ZDhkOW5vMGE3MGRu" class="client-link">kaya
+                    Skin</a>
+            </div>
+            <div class="client-box">
+                <img src="2024-01-13-14-42-09-696.png" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@Thewander_bros?si=ESd3aAmriKOL7gT7" class="client-link">The Wander
+                    Bros</a>
+            </div>
+
+            <div class="client-box">
+                <img src="image_search_1705136949027.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://youtube.com/@AnsuniKahaniyan?si=LGVZ4WqX-6tdQc5y" class="client-link">Ansuni
+                    Kahaniyan</a>
+            </div>
+            <div class="client-box">
+                <img src="IMG-20231110-WA0023.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://www.instagram.com/mochasolan?igsh=MXV0a2R4OGxkN2thZw==" class="client-link">Mocha Solan
+                    Cafe</a>
+            </div>
+
+            <div class="client-box">
+                <img src="image_search_1705137003537.jpg" alt="Client Logo" class="client-logo">
+                <a href="https://cosmospumps.com/" class="client-link">Cosmos Pumps</a>
+            </div>
+            <div class="client-box">
+                <img src="seekho.png" alt="Client Logo" class="client-logo">
+                <a href="https://seekho.in/" class="client-link">Seekho</a>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function isElementInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+                );
+            }
+
+            const clientBoxes = document.querySelectorAll('.client-box');
+
+            function animateOnScroll() {
+                clientBoxes.forEach((box) => {
+                    if (isElementInViewport(box)) {
+                        box.style.opacity = '1';
+                    }
+                });
+            }
+
+            // Initial animation check
+            animateOnScroll();
+
+            // Listen for scroll events to trigger the animation
+            window.addEventListener('scroll', animateOnScroll);
+
+            // Additional fade-in animation
+            const clientLinks = document.querySelectorAll('.client-link');
+
+            function fadeInLinks() {
+                clientLinks.forEach((link) => {
+                    if (isElementInViewport(link)) {
+                        link.style.opacity = '1';
+                    }
+                });
+            }
+
+            // Initial animation check for links
+            fadeInLinks();
+
+            // Listen for scroll events to trigger the link animation
+            window.addEventListener('scroll', fadeInLinks);
+        });
+    </script>
+
+
+    <section id="team">
+        <h2>Team</h2>
+        <p class="my-paragraph">Welcome to DTech Creations, where our team of 15 dedicated professionals excels in delivering
+            unparalleled services to a diverse clientele. Committed to continuous learning, we bring a wealth of
+            experience
+            and expertise to every project, ensuring precision, innovation, and a commitment to excellence. As a
+            client-focused company, partnering with us means tapping into the collective strength of a high-performing
+            team
+            dedicated to your success. Explore our closely-knit unit that thrives on collaboration, innovation, and
+            exceeding client expectations. We look forward to showcasing our unwavering commitment to quality and
+            professionalism as we collaborate on your projects. Your success is our priority.</p>
+        <script>
+            // Function to handle scroll events and trigger fade-in animation
+            function handleTeamSectionScroll() {
+                const teamSection = document.getElementById('team');
+                const sectionTop = teamSection.getBoundingClientRect().top;
+
+                if (sectionTop < window.innerHeight - 100) {
+                    teamSection.classList.add('visible');
+                }
+            }
+
+            // Add event listener to trigger fade-in effect when scrolling
+            window.addEventListener('scroll', handleTeamSectionScroll);
+        </script>
+    </section>
+
+
+    <title>Tools Section</title>
+    </head>
+
+    <body>
+
+        <section id="tools-section">
+            <h2>Tools</h2>
+            <p class="my-paragraph">Our dynamic and proficient team at DTech Creations harnesses a diverse array of
+                cutting-edge
+                software to ensure the seamless development of projects. With an adept understanding of each tool in our
+                arsenal, our professionals possess the expertise needed to deliver projects on time and with utmost
+                professionalism. From video editing using industry-standard platforms like Adobe Premiere Pro and Final
+                Cut
+                Pro to mobile app development proficiency with Android Studio and VS Code, our team excels in leveraging
+                the
+                full potential of these tools. In the realm of graphics design, we navigate effortlessly through Adobe
+                Photoshop, creating captivating images, illustrations, and graphics. Whether it's logo design,
+                animation, or
+                digital consulting, our team's comprehensive knowledge empowers us to craft solutions that meet and
+                exceed
+                expectations. Furthermore, our adept use of social media marketing and management tools ensures a
+                strategic
+                and impactful online presence. At DTech Creations, we don't just use software – we master it, allowing
+                us to deliver projects punctually and with a level of professionalism that sets us apart..</p>
+            <img src="teal gradient modern grow your business video (6).png" alt="Tool 3" class="tool-image">
+            <img src="teal gradient modern grow your business video (4).png" alt="Tool 3" class="tool-image">
+
+        </section>
+
+
+        <section id="popa">
+            <h2>Portfolio</h2>
+        </section>
+        <section id="Graphics">
+            <div class="post-container">
+                <div class="poster" id="poster">
+                    <!-- Poster content goes here -->
+                    <img src="teal gradient modern grow your business video (7).png" alt="Poster Image">
+                    <img src="teal gradient modern grow your business video (8).png" alt="Poster Image">
+                    <img src="teal gradient modern grow your business video (13).png" alt="Poster Image">
+                    <img src="teal gradient modern grow your business video (12).png" alt="Poster Image">
+                    <img src="teal gradient modern grow your business video (15).png" alt="Poster Image">
+                </div>
+            </div>
+        </section>
+
+        </section>
+        <section>
+            <section id="portfolio">
+                <div class="video-container-wrapper">
+                    <div class="video-container" onclick="togglePlayPause('TRUST')">
+                        <video id="TRUST" loop>
+                            <source src="TRUST.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('fianl podcast')">
+                        <video id="fianl podcast" loop>
+                            <source src="fianl podcast.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('1_6')">
+                        <video id="1_6" loop>
+                            <source src="1_6.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('ltdg')">
+                        <video id="ltdg" loop>
+                            <source src="ltdg.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('sample ')">
+                        <video id="sample " loop>
+                            <source src="sample .mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('English Mix Facts ')">
+                        <video id="English Mix Facts " loop>
+                            <source src="English Mix Facts .mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('1_5')">
+                        <video id="1_5" loop>
+                            <source src="1_5.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('hair (2)')">
+                        <video id="hair (2)" loop>
+                            <source src="hair (2).mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('C0100_2')">
+                        <video id="C0100_2" loop>
+                            <source src="C0100_2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('Sample s')">
+                        <video id="Sample s" loop>
+                            <source src="Sample s.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('1_7')">
+                        <video id="1_7" loop>
+                            <source src="1_7.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16"
+                        onclick="togglePlayPause('WhatsApp Video 2024-01-15 at 13.39.01_8b74aec1')">
+                        <video id="WhatsApp Video 2024-01-15 at 13.39.01_8b74aec1" loop>
+                            <source src="WhatsApp Video 2024-01-15 at 13.39.01_8b74aec1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('facebook')">
+                        <video id="facebook" loop>
+                            <source src="facebook.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('baarbie')">
+                        <video id="baarbie" loop>
+                            <source src="baarbie.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('nextgen')">
+                        <video id="nextgen" loop>
+                            <source src="nextgen.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('VIDEO 6')">
+                        <video id="VIDEO 6" loop>
+                            <source src="VIDEO 6.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('FINAL 4 SAMPLE')">
+                        <video id="FINAL 4 SAMPLE" loop>
+                            <source src="FINAL 4 SAMPLE.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('fianl podcast_1')">
+                        <video id="fianl podcast_1" loop>
+                            <source src="fianl podcast_1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p>.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('cinematic camera shots')">
+                        <video id="cinematic camera shots" loop>
+                            <source src="cinematic camera shots.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('watchwq')">
+                        <video id="watchwq" loop>
+                            <source src="watchwq.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('shine')">
+                        <video id="shine" loop>
+                            <source src="shine.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('hair cut sample')">
+                        <video id="hair cut sample" loop>
+                            <source src="hair cut sample.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('carstream-1080p-230715')">
+                        <video id="carstream-1080p-230715" loop>
+                            <source src="carstream-1080p-230715.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('fianl podca')">
+                        <video id="fianl podca" loop>
+                            <source src="fianl podca.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container" onclick="togglePlayPause('1_4')">
+                        <video id="1_4" loop>
+                            <source src="1_4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16" onclick="togglePlayPause('coaches')">
+                        <video id="coaches" loop>
+                            <source src="coaches.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container"
+                        onclick="togglePlayPause('1_8')">
+                        <video id="1_8" loop>
+                            <source src="1_8.mp4"
+                                type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container video-container-9x16"
+                        onclick="togglePlayPause('krishna Mishra. sample')">
+                        <video id="krishna Mishra. sample" loop>
+                            <source src="krishna Mishra. sample.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="overlay">
+                            <div class="overlay-text">
+                                <h2></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        window.addEventListener('error', function (e) {
+                            console.error('Error:', e);
+                        });
+                    </script>
+
+                    <script>
+                        function togglePlayPause(videoId) {
+                            var video = document.getElementById(videoId);
+                            if (video.paused) {
+                                video.play();
+                            } else {
+                                video.pause();
+                            }
+                        }
+                        // Add your JavaScript functions here, such as togglePlayPause
+                        function togglePlayPause(videoId) {
+                            var video = document.getElementById(videoId);
+                            var container = video.closest('.video-container');
+
+                            if (video.paused) {
+                                video.play();
+                                container.classList.add('playing');
+                            } else {
+                                video.pause();
+                                container.classList.remove('playing');
+                            }
+                        }
+
+                    </script>
+                </div>
+            </section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <section id="atam">
+                <img src="Colorful Modern Digital Marketing Solution Pencil Infographic.svg" alt="Tool 3" class="imn">
+            </section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <section id="tam">
+                <br>
+                <br>
+                <br>
+                <div class="container">
+                    <div class="connect-section">
+                        <div class="connect-text">Contact Us</div>
+                        <div id="connect-text">instagram</div>
+                        <div class="social-icons">
+                            <div class="gm-icon" onclick="openLink('https://www.linkedin.com/')">
+                                <br>
+                                <img src="gmail.svg" width="2000px" height="2000px" alt="lf">
+                            </div>
+                            <div class="in-icon" onclick="openLink('https://www.instagram.com/')">
+                                <br>
+                                <img src="instagram.svg" width="700px" height="700px" alt="lf">
+                            </div>
+                            <div class="link-icon" onclick="openLink('https://www.linkedin-like-platform.com/')">
+                                <br>
+                                <img src="linkneidn.svg" width="700px" height="700px" alt="lf">
+                            </div>
+                        </div>
+
+                        <script>
+                            function openLink(url) {
+                                window.open(url, '_blank');
+                            }
+                        </script>
+                        <br>
+                        <div class="line">Empowering Innovation, Unleashing</div>
+                        <div class="line">the Power of Tomorrow-</div>
+                        <div class="line">This is DTech! </div>
+                    </div>
+                    <nav class="foter-nv">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <a href="#about"><span>AboutUs</span></a>
+                        <a href="#services"><span>Services</span></a>
+                        <a href="https://forms.gle/N4HyNxbrnPh4NjmY7"><span>Career</span></a>
+                        <a href="https://forms.gle/KuUGh8xpiE8resRv7"><span>Consult</span></a>
+                        <a href="#happyClients"><span>Testimonials</span></a>
+                        <a href="#team"><span>Team</span></a>
+                    </nav>
+
+                    <div class="additional-text">
+                        <p>Get a quote or </p>
+                        <p>set up a consultation</p>
+                        <img src="qw.png" alt="Image Description">
+                    </div>
+                </div>
+
+                <script>
+                    const words = ['#Instagram', '#LinkedIn', '#Email'];
+                    let index = 0;
+
+                    function changeWord() {
+                        document.getElementById('connect-text').textContent = words[index];
+                        index = (index + 1) % words.length;
+                    }
+
+                    setInterval(changeWord, 1000);
+                </script>
+
+
+            </section>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="footer">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p>&copy; 2024, DTech Creations.</p>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var footer = document.querySelector('.footer');
+
+                        function toggleFooterVisibility() {
+                            var contentHeight = document.body.offsetHeight;
+                            var yOffset = window.pageYOffset;
+                            var windowHeight = window.innerHeight;
+
+                            if (yOffset + windowHeight >= contentHeight) {
+                                footer.classList.add('show-footer');
+                            } else {
+                                footer.classList.remove('show-footer');
+                            }
+                        }
+
+                        // Listen for scroll events to toggle footer visibility
+                        window.addEventListener('scroll', toggleFooterVisibility);
+
+                        // Initial check for visibility on page load
+                        toggleFooterVisibility();
+                    });
+
+                </script>
+
+    </body>
+
+</html>
